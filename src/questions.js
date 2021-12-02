@@ -1,34 +1,31 @@
 export const questions = [
   {
     id: 1,
-    question: "What is your full legal name?",
-    subQ: [
-      "Name:",
-      "Include any other names you have used in the past (or leave blank)",
-    ],
+    name: "What is your full legal name?",
+    subQ: [""],
   },
 
   {
     id: 2,
-    question: "What is your current address?",
+    name: "What is the name of the town or city where you currently reside?",
     subQ: ["Street address:", "City:", "Province:", "Postal Code:"],
   },
 
-  { id: 3, question: "What is your email address?", subQ: [""] },
+  { id: 3, name: "What is your email address?", subQ: [""] },
 
-  { id: 4, question: "What is your occupation?", subQ: [""] },
+  { id: 4, name: "What is your occupation?", subQ: [""] },
 
-  { id: 5, question: "What is your date of birth?", subQ: [""] },
+  { id: 5, name: "What is your date of birth?", subQ: [""] },
 
   {
     id: 6,
-    question: "In what country (or countries) do you have citizenship?",
+    name: "In what country (or countries) do you have citizenship?",
     subQ: [""],
   },
 
   {
     id: 7,
-    question: "What is the full name of your executor?",
+    name: "What is the full name of your executor?",
     subQ: [
       "An executor (or trustee) is the person responsible for administering your estate. You generally want to choose an executor who is responsible, younger than you, and in good health.",
     ],
@@ -36,14 +33,13 @@ export const questions = [
 
   {
     id: 8,
-    question:
-      "What is your relationship to your executor (is this person your spouse? Sibling? Friend?)",
+    name: "What is your relationship to your executor (is this person your spouse? Sibling? Friend?)",
     subQ: [""],
   },
 
   {
     id: 9,
-    question: "What is the full name of your alternate executor?",
+    name: "What is the full name of your alternate executor?",
     subQ: [
       "An alternate executor is the person responsible for administering your estate if your executor is unwilling or unable to administer your estate. ",
       "You generally want to choose an executor who is responsible, younger than you, and in good health.",
@@ -52,23 +48,21 @@ export const questions = [
 
   {
     id: 10,
-    question: "In what city or town does your alternate executor reside?",
+    name: "In what city or town does your alternate executor reside?",
     subQ: [""],
   },
 
-  {
-    id: 11,
-    question:
-      "Are there any specific items you would like to pass along as part of your estate (for example, jewelry, artwork, vehicles)?",
-    subQ: [""],
-  },
+  // {
+  //   id: 11,
+  //   question: "",
+  //   subQ: [""],
+  // },
 
-  {
-    id: 12,
-    question:
-      "Who would you like to receive these items specified in the previous question?",
-    subQ: [""],
-  },
+  // {
+  //   id: 12,
+  //   question: "",
+  //   subQ: [""],
+  // },
 
   // {
   //   id: 13,

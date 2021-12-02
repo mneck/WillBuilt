@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
-import Questions from "./questions";
+import Questions, { questions } from "./questions";
 
 const ListOfAnswers = () => {
   return (
     <div>
       <header className="App-header">
-        {console.log(Questions)}
+        {console.log(questions)}
         <ol>
-          {Questions.map(({ id, question }) => (
-            <li key={id}>{question}</li>
+          {questions.map((item) => (
+            <li key={item.id}>{item.name}</li>
           ))}
         </ol>
       </header>
