@@ -1,72 +1,55 @@
-import { useState, useEffect, createContext } from "react";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import questions from "./questions";
-import { AppContext } from "./AppContext";
 
-const QuestionContext = React.createContext(null);
+// const QuestionContext = React.createContext(null);
 
-const CurrentQuestion = () => {
-  // const MyContext = createContext(<default>);
-  // <MyContext.Provider value={initialValue}>  --> passes initialValue to MyContext
-  // const value = useContext(MyContext);
-  // Receives the value stored in the context of MyContext
-  // This value can be received in any child component of <MyContext.Provider>...</MyContext.Provider>
-  // const value = useContext(MyContext); --> Receives the value stored in the context of MyContext.
-  // This value can be received in any child component of <MyContext.Provider>...</MyContext.Provider>
-  const [questionsList, setQuestionsList] = React.useState({ questions });
-  const [answer, setAnswer] = useState("");
+const answerList = [];
 
-  const handleChange = (e) => {
-    setAnswer(e.target.value);
+const CurrentQuestion = ({
+  updateDraft,
+  switchToNextQuestion,
+  questionIndex,
+}) => {
+  const [value, setValue] = React.useState("");
+
+  const handleChange = (event) => {
+    setValue(event.target.value);
   };
 
-  const handleSubmit = (e) => {
-    const newList = [questionsList];
-    setAnswer(newList);
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (value) {
+      updateDraft(value, questionIndex);
+      switchToNextQuestion();
+    }
+    setValue("");
   };
-
-  // function Form() {
-  //   function handleSubmit(e) {
-  //     e.preventDefault();
-  //     console.log("You clicked submit.");
-  //   }
-  // }
 
   return (
-    // <div>
-    //   <p>{Form()}</p>
-    //   <p>{answer}</p>
-    //   <button onClick={() => updateAnswer(answer + 1)}>Increment Value</button>
-    // </div>
-
-    <AppContext.Provider value={answer}>
-      <div>
-        <h3>Current Question</h3>
-        <p>{questions[0].name}</p>
-
-        {/*questions.map((item) => (
-          //   <li key={item.id}>{item.name}</li>
-          // ))}
-          </ul> */}
-
-        <form>
-          <label htmlFor="answer">
-            Your Answer:
-            <input
-              id="answer"
-              type="text"
-              value={answer}
-              placeholder="Answer"
-              onChange={handleChange}
-            />
-          </label>
-          <button type="submit" onClick={handleSubmit}>
-            Submit
-          </button>
+    <div>
+      <h3>Current question:</h3>
+      <p>{questions[questionIndex].name}</p>
+      <ul>
+        <form onSubmit={handleSubmit}>
+          {questions[questionIndex].inputType === "text" && (
+            <input type="text" value={value} onChange={handleChange} />
+          )}
+          {questions[questionIndex].inputType === "dropDown" && (
+            <div>
+              <select onChange={handleChange}>
+                <option disabled hidden selected>
+                  Select One
+                </option>
+                {questions[questionIndex].options.map((option) => (
+                  <option value={option}>{option}</option>
+                ))}
+              </select>
+            </div>
+          )}
+          <button type="submit">Submit Answer</button>
         </form>
-      </div>
-    </AppContext.Provider>
+      </ul>
+    </div>
   );
 };
 
