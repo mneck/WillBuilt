@@ -85,8 +85,20 @@ userName
             <td>{props.appState.beneficiaryThreeName}</td>
           </tr>
           <tr>
-            <td>Plans for :</td>
-            <td>{props.appState.beneficiaryThreeName}</td>
+            <td>Contingency plan:</td>
+            <td>{props.appState.predeceasedPlans}</td>
+          </tr>
+          <tr>
+            <td>Age for Young Beneficiaries to Inherit</td>
+            <td>{props.appState.predeceasedPlans}</td>
+          </tr>
+          <tr>
+            <td>Witness 1:</td>
+            <td>{props.appState.predeceasedPlans}</td>
+          </tr>
+          <tr>
+            <td>Witness 2:</td>
+            <td>{props.appState.predeceasedPlans}</td>
           </tr>
         </table>
       </header>

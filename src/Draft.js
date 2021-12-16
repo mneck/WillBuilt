@@ -3,6 +3,24 @@ import Questions, { questions } from "./questions";
 import CurrentQuestion from "./CurrentQuestion";
 
 const Draft = (props) => {
+  const month = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  const signDate =
+    month[new Date().getMonth()] + " ____, " + new Date().getFullYear() + ".";
+
   return (
     <div>
       <p>
@@ -66,13 +84,55 @@ const Draft = (props) => {
       <h3>Residue of Estate</h3>
       <p>
         {" "}
-        to give the residue of my estate (the "Residue") to my{" "}
-        {props.appState.beneficiaryOneRelation},{" "}
+        (a) to divide the residue of my estate (the "Residue") equally among
+        those of{" "}
+      </p>
+
+      <p>
+        (i) my {props.appState.beneficiaryOneRelation},{" "}
         {props.appState.beneficiaryOneName.toUpperCase()}, of{" "}
         {props.appState.beneficiaryOneCity},{" "}
-        {props.appState.beneficiaryOneProvince} if she is alive on the date that
-        is 30 days after the date of my death;
+        {props.appState.beneficiaryOneProvince}
       </p>
+
+      <p>
+        (ii) my {props.appState.beneficiaryTwoRelation},{" "}
+        {props.appState.beneficiaryTwoName.toUpperCase()}, of{" "}
+        {props.appState.beneficiaryTwoCity},{" "}
+        {props.appState.beneficiaryTwoProvince}
+        if they are alive on the date that is 30 days after the date of my
+        death;
+      </p>
+      <p>
+        (iii) my {props.appState.beneficiaryThreeRelation},{" "}
+        {props.appState.beneficiaryThreeName.toUpperCase()}, of{" "}
+        {props.appState.beneficiaryThreeCity},{" "}
+        {props.appState.beneficiaryThreeProvince}
+      </p>
+      <p>
+        who are alive on the date that is 30 days after the date of my death;
+      </p>
+
+      <h3>Funeral Wishes</h3>
+      <p>6. I want my remains to be buried.</p>
+      <p>I have signed this Will on {signDate}</p>
+
+      <tr>
+        <p>
+          ________________________
+          {props.appState.witnessOneName}
+          {props.appState.witnessOneOccupation}
+          {props.appState.witnessOneAddress}
+        </p>
+      </tr>
+      <tr>
+        <p>
+          ________________________
+          {props.appState.witnessTwoName}
+          {props.appState.witnessTwoOccupation}
+          {props.appState.witnessTwoAddress}
+        </p>
+      </tr>
     </div>
   );
 };

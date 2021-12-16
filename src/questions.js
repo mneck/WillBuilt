@@ -344,6 +344,31 @@ export const questions = [
   },
 
   {
+    id: 19.1,
+    key: "beneficiaryThreeProvince",
+    name: "What is the name of the town or city where your third beneficiary resides?",
+    subQ: "",
+    inputType: "dropdown",
+    options: [
+      "Alberta",
+      "British Columbia",
+      "Manitoba",
+      "New Brunswick",
+      "Newfoundland and Labrador",
+      "Nova Scotia",
+      "Ontario",
+      "Prince Edward Island",
+      "Quebec",
+      "Saskatchewan",
+      "Northwest Territories",
+      "Nunavut",
+      "Yukon",
+    ],
+    //Text to submit town/city name
+    //Drop-down menu: province
+  },
+
+  {
     id: 20,
     key: "predeceasedPlans",
     name: "If one or more of your beneficiaries predeceases you, what do you want to have happen to that person's share of the residue?",

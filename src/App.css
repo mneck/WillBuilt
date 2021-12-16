@@ -27,6 +27,13 @@ th {
   border-collapse: collapse;
 }
 
+.signBlock {
+  border: none;
+  border-collapse: collapse;
+  padding: 2px;
+  text-align: left;
+}
+
 .tooltip {
   position: relative;
   display: inline-block;
