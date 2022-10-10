@@ -346,7 +346,7 @@ export const questions = [
   {
     id: 19.1,
     key: "beneficiaryThreeProvince",
-    name: "What is the name of the town or city where your third beneficiary resides?",
+    name: "In what province or territory does your third beneficiary reside?",
     subQ: "",
     inputType: "dropdown",
     options: [
@@ -373,7 +373,7 @@ export const questions = [
     key: "predeceasedPlans",
     name: "If one or more of your beneficiaries predeceases you, what do you want to have happen to that person's share of the residue?",
     subQ: "",
-    inputType: "radioButton",
+    inputType: "dropdown",
     options: [
       "Have that person's share go to the surviving children of that person",
       "Have that person's share go to my children that survive me",
@@ -413,6 +413,15 @@ export const questions = [
     id: 24,
     key: "remains",
     name: "Do you wish to have your remains buried or cremated?",
+    subQ: "",
+    inputType: "dropDown",
+    options: ["buried", "cremated"],
+  },
+
+  {
+    id: 24.1,
+    key: "signDate",
+    name: "On what date will you sign this will?",
     subQ: "",
     inputType: "dropDown",
     options: ["buried", "cremated"],

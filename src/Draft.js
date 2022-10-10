@@ -38,20 +38,37 @@ const Draft = (props) => {
       </p>
       <h3>Appointment of Executor and Trustee</h3>
       <p>
-        2. In this Will I refer to the person who is both the Executor of my
-        Will and the Trustee of my Estate as my "Trustee".
+        2. In this Will I refer to the person who is both the{" "}
+        <span class="tooltip">
+          Executor
+          <span class="tooltiptext">
+            An executor is the person responsible for administering the
+            instructions in your will after you pass away. An executor can also
+            be called a trustee. You generally want to choose an executor who is
+            responsible, younger than you, and in good health.
+          </span>
+        </span>{" "}
+        of my Will and the Trustee of my Estate as my "Trustee".
       </p>
       <p>
         3. (a) I appoint my {props.appState.execRelation},{" "}
-        {props.appState.execName.toUpperCase()}, to be my Trustee.
+        {props.appState.execName.toUpperCase()} of {props.appState.execCity},{" "}
+        {props.appState.execProvince}, to be my Trustee.
       </p>
       <p>
-        (b) If {props.appState.execName.toUpperCase()} is unwilling or unable to
-        act or continue to act as my Trustee, I appoint my{" "}
-        {props.appState.altExecRelation},{" "}
-        {props.appState.altExecName.toUpperCase()}, of{" "}
-        {props.appState.altExecCity}, {props.appState.altExecProvince} to be my
-        Trustee.
+        <span class="tooltip">
+          (b) If {props.appState.execName.toUpperCase()} is unwilling or unable
+          to act or continue to act as my Trustee, I appoint my{" "}
+          {props.appState.altExecRelation},{" "}
+          {props.appState.altExecName.toUpperCase()}, of{" "}
+          {props.appState.altExecCity}, {props.appState.altExecProvince} to be
+          my Trustee.
+          <span class="tooltiptext">
+            An alternate executor is the person responsible for administering
+            your estate if your executor is unwilling or unable to administer
+            your estate.
+          </span>
+        </span>
       </p>
       <h3>Trustee to Administer My Estate</h3>
       <p>
@@ -84,8 +101,18 @@ const Draft = (props) => {
       <h3>Residue of Estate</h3>
       <p>
         {" "}
-        (a) to divide the residue of my estate (the "Residue") equally among
-        those of{" "}
+        (a) to divide the residue of my estate{" "}
+        <span class="tooltip">
+          <span class="tooltiptext">
+            Your residue includes everything you own: real estate, investments,
+            clothing, vehicles, etc. The residue includes all things you would
+            pass on to the people you specify as the recipients of the residue.
+            The people specified as recipients in this will would receive equal
+            shares of the residue.
+          </span>
+          (the "Residue"){" "}
+        </span>{" "}
+        equally among those of{" "}
       </p>
 
       <p>
@@ -100,8 +127,6 @@ const Draft = (props) => {
         {props.appState.beneficiaryTwoName.toUpperCase()}, of{" "}
         {props.appState.beneficiaryTwoCity},{" "}
         {props.appState.beneficiaryTwoProvince}
-        if they are alive on the date that is 30 days after the date of my
-        death;
       </p>
       <p>
         (iii) my {props.appState.beneficiaryThreeRelation},{" "}
@@ -115,7 +140,7 @@ const Draft = (props) => {
 
       <h3>Funeral Wishes</h3>
       <p>6. I want my remains to be buried.</p>
-      <p>I have signed this Will on {signDate}</p>
+      <p>I have signed this Will on {props.appState.signDate}</p>
 
       <tr>
         <p>

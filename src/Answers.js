@@ -69,7 +69,7 @@ userName
             <td>{props.appState.execName}</td>
           </tr>
           <tr>
-            <td>Alternative Executor:</td>
+            <td>Alternate Executor:</td>
             <td>{props.appState.altExecName}</td>
           </tr>
           <tr>
@@ -85,11 +85,11 @@ userName
             <td>{props.appState.beneficiaryThreeName}</td>
           </tr>
           <tr>
-            <td>Contingency plan:</td>
+            <td>Contingency Plan:</td>
             <td>{props.appState.predeceasedPlans}</td>
           </tr>
           <tr>
-            <td>Age for Young Beneficiaries to Inherit</td>
+            <td>Age Limits on Inheriting:</td>
             <td>{props.appState.predeceasedPlans}</td>
           </tr>
           <tr>
